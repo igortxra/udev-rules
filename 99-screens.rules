@@ -1,0 +1,5 @@
+ACTION=="change", KERNEL=="card1", \
+SUBSYSTEM=="drm", \
+IMPORT{program}="/usr/bin/xpub", \
+RUN+="/bin/su $env{XUSER} -c 'autorandr --change'"
+RUN+="/bin/su $env{XUSER} -c 'dunstify -a System Screens Screen\ change\ detected'"
